@@ -1,0 +1,124 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+install_symlink {
+    name: "symlink_firmware_toco",
+    vendor: true,
+    installed_location: "firmware/qcom/sm7150/xiaomi/toco",
+    symlink_target: "/odm/firmware/qcom/sm7150/xiaomi/toco",
+}
+
+install_symlink {
+    name: "symlink_firmware_toco_modem_pr",
+    device_specific: true,
+    installed_location: "firmware/qcom/sm7150/xiaomi/toco/modem_pr",
+    symlink_target: "/vendor/firmware_mnt/image/modem_pr",
+}
+
+install_symlink {
+    name: "symlink_firmware_toco_adspr.jsn",
+    device_specific: true,
+    installed_location: "firmware/qcom/sm7150/xiaomi/toco/adspr.jsn",
+    symlink_target: "/vendor/firmware_mnt/image/adspr.jsn",
+}
+
+install_symlink {
+    name: "symlink_firmware_toco_adsps.jsn",
+    device_specific: true,
+    installed_location: "firmware/qcom/sm7150/xiaomi/toco/adsps.jsn",
+    symlink_target: "/vendor/firmware_mnt/image/adsps.jsn",
+}
+
+install_symlink {
+    name: "symlink_firmware_toco_adspua.jsn",
+    device_specific: true,
+    installed_location: "firmware/qcom/sm7150/xiaomi/toco/adspua.jsn",
+    symlink_target: "/vendor/firmware_mnt/image/adspua.jsn",
+}
+
+install_symlink {
+    name: "symlink_firmware_toco_cdspr.jsn",
+    device_specific: true,
+    installed_location: "firmware/qcom/sm7150/xiaomi/toco/cdspr.jsn",
+    symlink_target: "/vendor/firmware_mnt/image/cdspr.jsn",
+}
+
+install_symlink {
+    name: "symlink_firmware_toco_modemr.jsn",
+    device_specific: true,
+    installed_location: "firmware/qcom/sm7150/xiaomi/toco/modemr.jsn",
+    symlink_target: "/vendor/firmware_mnt/image/modemr.jsn",
+}
+
+install_symlink {
+    name: "symlink_firmware_toco_modemuw.jsn",
+    device_specific: true,
+    installed_location: "firmware/qcom/sm7150/xiaomi/toco/modemuw.jsn",
+    symlink_target: "/vendor/firmware_mnt/image/modemuw.jsn",
+}
+
+install_symlink {
+    name: "symlink_firmware_toco_wlanmdsp.mbn",
+    device_specific: true,
+    installed_location: "firmware/qcom/sm7150/xiaomi/toco/wlanmdsp.mbn",
+    symlink_target: "/vendor/firmware_mnt/image/wlanmdsp.mbn",
+}
+
+install_symlink {
+    name: "symlink_firmware_toco_adsp.mbn",
+    device_specific: true,
+    installed_location: "firmware/qcom/sm7150/xiaomi/toco/adsp.mbn",
+    symlink_target: "/vendor/firmware_mnt/image/adsp.mdt",
+}
+
+install_symlink {
+    name: "symlink_firmware_toco_cdsp.mbn",
+    device_specific: true,
+    installed_location: "firmware/qcom/sm7150/xiaomi/toco/cdsp.mbn",
+    symlink_target: "/vendor/firmware_mnt/image/cdsp.mdt",
+}
+
+install_symlink {
+    name: "symlink_firmware_toco_modem.mbn",
+    device_specific: true,
+    installed_location: "firmware/qcom/sm7150/xiaomi/toco/modem.mbn",
+    symlink_target: "/vendor/firmware_mnt/image/modem.mdt",
+}
+
+install_symlink {
+    name: "symlink_firmware_toco_venus.mbn",
+    device_specific: true,
+    installed_location: "firmware/qcom/sm7150/xiaomi/toco/venus.mbn",
+    symlink_target: "/vendor/firmware_mnt/image/venus.mdt",
+}
+
+
+// Workaround soong installing device_specific prebuilt_firmware module to /odm/etc/firmware
+install_symlink {
+    name: "symlink_firmware_toco_ipa_fws.mbn",
+    device_specific: true,
+    installed_location: "firmware/qcom/sm7150/xiaomi/toco/ipa_fws.mbn",
+    symlink_target: "/odm/etc/firmware/qcom/sm7150/xiaomi/toco/ipa_fws.mbn",
+}
+
+phony {
+    name: "all_symlink_firmware_toco",
+    required: [
+        "symlink_firmware_toco",
+        "symlink_firmware_toco_adsp.mbn",
+        "symlink_firmware_toco_adspr.jsn",
+        "symlink_firmware_toco_adsps.jsn",
+        "symlink_firmware_toco_adspua.jsn",
+        "symlink_firmware_toco_cdsp.mbn",
+        "symlink_firmware_toco_cdspr.jsn",
+        "symlink_firmware_toco_ipa_fws.mbn",
+        "symlink_firmware_toco_modem.mbn",
+        "symlink_firmware_toco_modem_pr",
+        "symlink_firmware_toco_modemr.jsn",
+        "symlink_firmware_toco_modemuw.jsn",
+        "symlink_firmware_toco_venus.mbn",
+        "symlink_firmware_toco_wlanmdsp.mbn",
+    ],
+}
